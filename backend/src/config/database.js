@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 
+//Create a new pool instance with configuration from environment variables
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     max: 20,
@@ -8,14 +9,15 @@ const pool = new Pool({
     ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
+//Event listeners for pool connection and errors
 pool.on('connect', () => {
     if (process.env.NODE_ENV !== 'test') {
-        console.log('✅ PostgreSQL connected');
+        console.log('PostgreSQL connected');
     }
 });
 
 pool.on('error', (err) => {
-    console.error('❌ PostgreSQL connection error:', err.message);
+    console.error('PostgreSQL connection error:', err.message);
     process.exit(1);
 });
 
@@ -24,6 +26,8 @@ pool.on('error', (err) => {
  * @param {string} text - SQL query
  * @param {Array} params - Query parameters
  */
+
+//In development mode, log the query and its execution time
 const query = async (text, params) => {
     const start = Date.now();
     const res = await pool.query(text, params);
@@ -34,9 +38,7 @@ const query = async (text, params) => {
     return res;
 };
 
-/**
- * Get a client from the pool for transactions
- */
+//Get a client from the pool for transactions or multiple queries
 const getClient = async () => {
     const client = await pool.connect();
     const originalRelease = client.release.bind(client);
