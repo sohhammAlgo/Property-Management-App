@@ -1,24 +1,93 @@
-require("dotenv").config();
-require("express-async-errors");
-
-const express = require("express");
-const cors = require("cors");
-const helmet = require("helmet");
-const morgan = require("morgan");
-
-const app = express();
-
-app.use(express.json());
-app.use(cors());
-app.use(helmet());
-app.use(morgan("dev"));
-
-app.get("/", (req, res) => {
-  res.send("Backend Running 🚀");
-});
+require('dotenv').config();
+const http = require('http');
+const { Server } = require('socket.io');
+const app = require('./app');
+const { connectRedis } = require('./config/redis');
+const { initFirebase } = require('./config/firebase');
+const { initializeSocket } = require('./config/socket');
+const { cleanExpiredTokens } = require('./utils/jwt');
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const startServer = async () => {
+  try {
+    // Initialize connections
+    await connectRedis();
+    initFirebase();
+
+    // Create HTTP server
+    const server = http.createServer(app);
+
+    // Initialize Socket.IO
+    const io = new Server(server, {
+      cors: {
+        origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+        methods: ['GET', 'POST'],
+        credentials: true,
+      },
+      pingTimeout: 60000,
+      pingInterval: 25000,
+    });
+
+    initializeSocket(io);
+
+    // Periodic cleanup of expired refresh tokens (every hour)
+    setInterval(async () => {
+      try {
+        const deleted = await cleanExpiredTokens();
+        if (deleted > 0) console.log(`🧹 Cleaned ${deleted} expired refresh tokens`);
+      } catch (err) {
+        console.error('Token cleanup error:', err.message);
+      }
+    }, 60 * 60 * 1000);
+
+    // Start listening
+    server.listen(PORT, () => {
+      console.log(`
+╔════════════════════════════════════════════╗
+║  🏘️  Society Management API               ║
+║  ✅  Server running on port ${PORT}          ║
+║  📡  Socket.IO enabled                     ║
+║  🌍  Environment: ${process.env.NODE_ENV?.padEnd(12)} ║
+╚════════════════════════════════════════════╝
+      `);
+    });
+
+    // Graceful shutdown
+    const gracefulShutdown = async (signal) => {
+      console.log(`\n⚠️  ${signal} received. Shutting down gracefully...`);
+      server.close(async () => {
+        try {
+          const { pool } = require('./config/database');
+          const { getRedisClient } = require('./config/redis');
+          await pool.end();
+          await getRedisClient().quit();
+          console.log('Cleanup complete. Goodbye!');
+          process.exit(0);
+        } catch (err) {
+          console.error('Cleanup error:', err);
+          process.exit(1);
+        }
+      });
+    };
+
+    process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+    process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+
+    // Unhandled errors
+    process.on('unhandledRejection', (reason) => {
+      console.error('Unhandled Promise Rejection:', reason);
+    });
+
+    process.on('uncaughtException', (err) => {
+      console.error('Uncaught Exception:', err);
+      process.exit(1);
+    });
+
+  } catch (err) {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  }
+};
+
+startServer();
