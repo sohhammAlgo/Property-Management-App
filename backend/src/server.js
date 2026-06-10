@@ -18,6 +18,7 @@ const startServer = async () => {
   try {
     // Initialize connections
     await connectRedis();
+    
     initFirebase();
 
     // Create HTTP server
