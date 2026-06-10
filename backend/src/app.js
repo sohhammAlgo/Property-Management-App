@@ -20,6 +20,13 @@ const { announcementRouter, notificationRouter } = require('./routes/misc');
 
 const app = express();
 
+app.get('/', (req, res) => {
+    res.json({
+        success: true,
+        message: 'Society Management API Running 🚀'
+    });
+});
+
 // ── Security Middleware ──
 app.use(helmet());
 app.use(cors({

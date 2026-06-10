@@ -2,3 +2,7 @@ Project.md
 ui
 design-context
 design-code
+.env
+.env.*
+backend/.env
+ai-service/.env

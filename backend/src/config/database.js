@@ -49,4 +49,8 @@ const getClient = async () => {
     return client;
 };
 
+pool.query('SELECT NOW()')
+    .then(() => console.log('PostgreSQL Connected'))
+    .catch(err => console.error('PostgreSQL Error:', err.message));
+
 module.exports = { query, getClient, pool };
