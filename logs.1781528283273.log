@@ -1,0 +1,681 @@
+2026-06-11T13:04:31.810659162Z [err]  (node:1) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+2026-06-11T13:04:31.810662562Z [err]  In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+2026-06-11T13:04:31.810665672Z [err]  
+2026-06-11T13:04:31.810668822Z [err]  To prepare for this change:
+2026-06-11T13:04:31.810672512Z [err]  - If you want the current behavior, explicitly use 'sslmode=verify-full'
+2026-06-11T13:04:31.810676782Z [err]  - If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+2026-06-11T13:04:31.810680272Z [err]  
+2026-06-11T13:04:31.810684011Z [err]  See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+2026-06-11T13:04:31.810687241Z [err]  (Use `node --trace-warnings ...` to show where the warning was created)
+2026-06-11T13:04:31.810690401Z [inf]  Redis connected
+2026-06-11T13:04:31.969655794Z [inf]  Starting Container
+2026-06-11T13:04:32.496158541Z [inf]  Firebase Admin initialized
+2026-06-11T13:04:32.498554313Z [inf]  
+2026-06-11T13:04:32.498558703Z [inf]  ╔════════════════════════════════════════════╗
+2026-06-11T13:04:32.498561693Z [inf]  ║  🏘️  Society Management API               ║
+2026-06-11T13:04:32.498564653Z [inf]  ║  ✅  Server running on port 5000          ║
+2026-06-11T13:04:32.498568013Z [inf]  ║  📡  Socket.IO enabled                     ║
+2026-06-11T13:04:32.498570953Z [inf]  ║  🌍  Environment: development  ║
+2026-06-11T13:04:32.498574393Z [inf]  ╚════════════════════════════════════════════╝
+2026-06-11T13:04:32.498577933Z [inf]        
+2026-06-11T13:04:33.412542162Z [inf]  PostgreSQL connected
+2026-06-11T13:04:33.602911088Z [inf]  PostgreSQL Connected
+2026-06-11T14:04:34.444209571Z [inf]  PostgreSQL connected
+2026-06-11T14:04:34.467434997Z [inf]  Query executed: {
+2026-06-11T14:04:34.467440807Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T14:04:34.467445307Z [inf]    duration: '1966ms',
+2026-06-11T14:04:34.467448997Z [inf]    rows: 0
+2026-06-11T14:04:34.467452937Z [inf]  }
+2026-06-11T15:04:35.540342573Z [inf]  PostgreSQL connected
+2026-06-11T15:04:35.540347263Z [inf]  Query executed: {
+2026-06-11T15:04:35.540351183Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T15:04:35.540355103Z [inf]    duration: '1966ms',
+2026-06-11T15:04:35.540358613Z [inf]    rows: 0
+2026-06-11T15:04:35.540362172Z [inf]  }
+2026-06-11T16:04:36.887658515Z [inf]  PostgreSQL connected
+2026-06-11T16:04:36.887665385Z [inf]  Query executed: {
+2026-06-11T16:04:36.887670674Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T16:04:36.887674924Z [inf]    duration: '1903ms',
+2026-06-11T16:04:36.887683014Z [inf]    rows: 0
+2026-06-11T16:04:36.887687434Z [inf]  }
+2026-06-11T17:04:37.183993129Z [inf]  PostgreSQL connected
+2026-06-11T17:04:37.183997389Z [inf]  Query executed: {
+2026-06-11T17:04:37.184000738Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T17:04:37.184004228Z [inf]    duration: '1980ms',
+2026-06-11T17:04:37.184007968Z [inf]    rows: 0
+2026-06-11T17:04:37.184011868Z [inf]  }
+2026-06-11T18:04:38.342195249Z [inf]  PostgreSQL connected
+2026-06-11T18:04:38.342204859Z [inf]  Query executed: {
+2026-06-11T18:04:38.342211149Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T18:04:38.342216589Z [inf]    duration: '1871ms',
+2026-06-11T18:04:38.342221119Z [inf]    rows: 0
+2026-06-11T18:04:38.342226949Z [inf]  }
+2026-06-11T19:04:39.458128888Z [err]  Redis error: Socket closed unexpectedly
+2026-06-11T19:04:39.458132917Z [inf]  Redis reconnecting...
+2026-06-11T19:04:39.458137227Z [inf]  Redis connected
+2026-06-11T19:04:39.458141627Z [inf]  PostgreSQL connected
+2026-06-11T19:04:39.458144927Z [inf]  Query executed: {
+2026-06-11T19:04:39.458148437Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T19:04:39.458151797Z [inf]    duration: '1893ms',
+2026-06-11T19:04:39.458155377Z [inf]    rows: 0
+2026-06-11T19:04:39.458158407Z [inf]  }
+2026-06-11T20:04:40.385555332Z [inf]  PostgreSQL connected
+2026-06-11T20:04:40.385562181Z [inf]  Query executed: {
+2026-06-11T20:04:40.385566801Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T20:04:40.385570361Z [inf]    duration: '1798ms',
+2026-06-11T20:04:40.385574541Z [inf]    rows: 0
+2026-06-11T20:04:40.385579911Z [inf]  }
+2026-06-11T21:04:40.936874367Z [inf]  PostgreSQL connected
+2026-06-11T21:04:40.936879387Z [inf]  Query executed: {
+2026-06-11T21:04:40.936882957Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T21:04:40.936887057Z [inf]    duration: '1888ms',
+2026-06-11T21:04:40.936890627Z [inf]    rows: 0
+2026-06-11T21:04:40.936894127Z [inf]  }
+2026-06-11T22:04:41.529823904Z [inf]  PostgreSQL connected
+2026-06-11T22:04:41.529833104Z [inf]  Query executed: {
+2026-06-11T22:04:41.529838534Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T22:04:41.529842764Z [inf]    duration: '1820ms',
+2026-06-11T22:04:41.529847174Z [inf]    rows: 0
+2026-06-11T22:04:41.529851884Z [inf]  }
+2026-06-11T23:04:41.593734686Z [inf]  PostgreSQL connected
+2026-06-11T23:04:41.593737366Z [inf]  Query executed: {
+2026-06-11T23:04:41.593739606Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-11T23:04:41.593742115Z [inf]    duration: '1822ms',
+2026-06-11T23:04:41.593745235Z [inf]    rows: 0
+2026-06-11T23:04:41.593747995Z [inf]  }
+2026-06-12T00:04:41.744567046Z [inf]  PostgreSQL connected
+2026-06-12T00:04:41.744571476Z [inf]  Query executed: {
+2026-06-12T00:04:41.744574716Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T00:04:41.744578376Z [inf]    duration: '1843ms',
+2026-06-12T00:04:41.744581286Z [inf]    rows: 0
+2026-06-12T00:04:41.744584696Z [inf]  }
+2026-06-12T01:04:34.190512819Z [err]  Redis error: Socket closed unexpectedly
+2026-06-12T01:04:34.190518068Z [inf]  Redis reconnecting...
+2026-06-12T01:04:34.190522198Z [inf]  Redis connected
+2026-06-12T01:04:34.190526248Z [inf]  PostgreSQL connected
+2026-06-12T01:04:34.353726906Z [inf]  Query executed: {
+2026-06-12T01:04:34.353731156Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T01:04:34.353735676Z [inf]    duration: '1849ms',
+2026-06-12T01:04:34.353739966Z [inf]    rows: 0
+2026-06-12T01:04:34.353743636Z [inf]  }
+2026-06-12T02:04:35.933892416Z [inf]  PostgreSQL connected
+2026-06-12T02:04:35.933902346Z [inf]  Query executed: {
+2026-06-12T02:04:35.933906016Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T02:04:35.933960665Z [inf]    duration: '1831ms',
+2026-06-12T02:04:35.933963765Z [inf]    rows: 0
+2026-06-12T02:04:35.933966905Z [inf]  }
+2026-06-12T03:04:36.755198830Z [inf]  PostgreSQL connected
+2026-06-12T03:04:36.755204660Z [inf]  Query executed: {
+2026-06-12T03:04:36.755207850Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T03:04:36.755210939Z [inf]    duration: '1966ms',
+2026-06-12T03:04:36.755213899Z [inf]    rows: 0
+2026-06-12T03:04:36.755217269Z [inf]  }
+2026-06-12T04:04:37.735950020Z [inf]  PostgreSQL connected
+2026-06-12T04:04:37.735954150Z [inf]  Query executed: {
+2026-06-12T04:04:37.735957500Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T04:04:37.735961620Z [inf]    duration: '1890ms',
+2026-06-12T04:04:37.735965230Z [inf]    rows: 0
+2026-06-12T04:04:37.735968670Z [inf]  }
+2026-06-12T05:04:38.584077015Z [inf]  PostgreSQL connected
+2026-06-12T05:04:38.584081855Z [inf]  Query executed: {
+2026-06-12T05:04:38.584085925Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T05:04:38.584091675Z [inf]    duration: '1838ms',
+2026-06-12T05:04:38.584095705Z [inf]    rows: 0
+2026-06-12T05:04:38.584099415Z [inf]  }
+2026-06-12T06:04:38.993207730Z [inf]  PostgreSQL connected
+2026-06-12T06:04:38.993212000Z [inf]  Query executed: {
+2026-06-12T06:04:38.993215430Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T06:04:38.993218610Z [inf]    duration: '1921ms',
+2026-06-12T06:04:38.993222300Z [inf]    rows: 0
+2026-06-12T06:04:38.993225840Z [inf]  }
+2026-06-12T07:04:39.924663026Z [err]  Redis error: Socket closed unexpectedly
+2026-06-12T07:04:39.924668615Z [inf]  Redis reconnecting...
+2026-06-12T07:04:39.924673925Z [inf]  Redis connected
+2026-06-12T07:04:39.924677995Z [inf]  PostgreSQL connected
+2026-06-12T07:04:39.924682895Z [inf]  Query executed: {
+2026-06-12T07:04:39.924688655Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T07:04:39.924693465Z [inf]    duration: '1805ms',
+2026-06-12T07:04:39.924698675Z [inf]    rows: 0
+2026-06-12T07:04:39.924703125Z [inf]  }
+2026-06-12T08:04:40.033653207Z [inf]  PostgreSQL connected
+2026-06-12T08:04:40.033661307Z [inf]  Query executed: {
+2026-06-12T08:04:40.033666367Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T08:04:40.033671107Z [inf]    duration: '2008ms',
+2026-06-12T08:04:40.033675346Z [inf]    rows: 0
+2026-06-12T08:04:40.033679176Z [inf]  }
+2026-06-12T09:04:40.865252506Z [inf]  PostgreSQL connected
+2026-06-12T09:04:40.865256176Z [inf]  Query executed: {
+2026-06-12T09:04:40.865259066Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T09:04:40.865262076Z [inf]    duration: '1857ms',
+2026-06-12T09:04:40.865265166Z [inf]    rows: 0
+2026-06-12T09:04:40.865268336Z [inf]  }
+2026-06-12T10:04:41.973397011Z [inf]  PostgreSQL connected
+2026-06-12T10:04:41.973402381Z [inf]  Query executed: {
+2026-06-12T10:04:41.973405821Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T10:04:41.973410261Z [inf]    duration: '1873ms',
+2026-06-12T10:04:41.973414581Z [inf]    rows: 0
+2026-06-12T10:04:41.973418561Z [inf]  }
+2026-06-12T11:04:42.399261433Z [inf]  PostgreSQL connected
+2026-06-12T11:04:42.399265853Z [inf]  Query executed: {
+2026-06-12T11:04:42.399269863Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T11:04:42.399273443Z [inf]    duration: '2004ms',
+2026-06-12T11:04:42.399277973Z [inf]    rows: 0
+2026-06-12T11:04:42.399281573Z [inf]  }
+2026-06-12T12:04:42.609121511Z [inf]  PostgreSQL connected
+2026-06-12T12:04:42.609128121Z [inf]  Query executed: {
+2026-06-12T12:04:42.609133131Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T12:04:42.609137721Z [inf]    duration: '2005ms',
+2026-06-12T12:04:42.609142451Z [inf]    rows: 0
+2026-06-12T12:04:42.609147291Z [inf]  }
+2026-06-12T12:42:12.594544950Z [err]  Redis error: Socket closed unexpectedly
+2026-06-12T12:42:12.594549020Z [inf]  Redis reconnecting...
+2026-06-12T12:42:12.594552180Z [inf]  Redis connected
+2026-06-12T13:04:42.688406535Z [inf]  PostgreSQL connected
+2026-06-12T13:04:42.688411145Z [inf]  Query executed: {
+2026-06-12T13:04:42.688414725Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T13:04:42.688418175Z [inf]    duration: '1870ms',
+2026-06-12T13:04:42.688422104Z [inf]    rows: 0
+2026-06-12T13:04:42.688426104Z [inf]  }
+2026-06-12T13:56:43.498092554Z [err]  Redis error: Socket closed unexpectedly
+2026-06-12T13:56:43.498098334Z [inf]  Redis reconnecting...
+2026-06-12T13:56:43.498103224Z [inf]  Redis connected
+2026-06-12T14:04:43.619945803Z [inf]  PostgreSQL connected
+2026-06-12T14:04:43.619950773Z [inf]  Query executed: {
+2026-06-12T14:04:43.619954913Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T14:04:43.619958803Z [inf]    duration: '1895ms',
+2026-06-12T14:04:43.619962903Z [inf]    rows: 0
+2026-06-12T14:04:43.619966723Z [inf]  }
+2026-06-12T15:04:34.514561301Z [inf]  PostgreSQL connected
+2026-06-12T15:04:34.514566481Z [inf]  Query executed: {
+2026-06-12T15:04:34.514570161Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T15:04:34.514574641Z [inf]    duration: '1847ms',
+2026-06-12T15:04:34.514578351Z [inf]    rows: 0
+2026-06-12T15:04:34.514582401Z [inf]  }
+2026-06-12T16:04:35.098246821Z [inf]  PostgreSQL connected
+2026-06-12T16:04:35.098250321Z [inf]  Query executed: {
+2026-06-12T16:04:35.098253141Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T16:04:35.098256031Z [inf]    duration: '1815ms',
+2026-06-12T16:04:35.098258990Z [inf]    rows: 0
+2026-06-12T16:04:35.098261830Z [inf]  }
+2026-06-12T17:04:36.183066762Z [inf]  PostgreSQL connected
+2026-06-12T17:04:36.183071722Z [inf]  Query executed: {
+2026-06-12T17:04:36.183076111Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T17:04:36.183080431Z [inf]    duration: '1831ms',
+2026-06-12T17:04:36.183084451Z [inf]    rows: 0
+2026-06-12T17:04:36.183088201Z [inf]  }
+2026-06-12T18:04:36.229000763Z [inf]  PostgreSQL connected
+2026-06-12T18:04:36.229004753Z [inf]  Query executed: {
+2026-06-12T18:04:36.229008583Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T18:04:36.229012283Z [inf]    duration: '1882ms',
+2026-06-12T18:04:36.229016283Z [inf]    rows: 0
+2026-06-12T18:04:36.229020463Z [inf]  }
+2026-06-12T19:04:37.336564571Z [inf]  PostgreSQL connected
+2026-06-12T19:04:37.336567861Z [inf]  Query executed: {
+2026-06-12T19:04:37.336571181Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T19:04:37.336574621Z [inf]    duration: '1808ms',
+2026-06-12T19:04:37.336578681Z [inf]    rows: 0
+2026-06-12T19:04:37.336582270Z [inf]  }
+2026-06-12T19:56:48.526027724Z [err]  Redis error: Socket closed unexpectedly
+2026-06-12T19:56:48.526033414Z [inf]  Redis reconnecting...
+2026-06-12T19:56:48.526038074Z [inf]  Redis connected
+2026-06-12T20:04:38.473830474Z [inf]  PostgreSQL connected
+2026-06-12T20:04:38.473834804Z [inf]  Query executed: {
+2026-06-12T20:04:38.473838974Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T20:04:38.473843163Z [inf]    duration: '1849ms',
+2026-06-12T20:04:38.473846993Z [inf]    rows: 0
+2026-06-12T20:04:38.473850543Z [inf]  }
+2026-06-12T21:04:39.023156442Z [inf]  PostgreSQL connected
+2026-06-12T21:04:39.023164682Z [inf]  Query executed: {
+2026-06-12T21:04:39.023169422Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T21:04:39.023173762Z [inf]    duration: '1824ms',
+2026-06-12T21:04:39.023177842Z [inf]    rows: 0
+2026-06-12T21:04:39.023182211Z [inf]  }
+2026-06-12T22:04:39.448130082Z [inf]    rows: 0
+2026-06-12T22:04:39.448135592Z [inf]  PostgreSQL connected
+2026-06-12T22:04:39.448138092Z [inf]  }
+2026-06-12T22:04:39.448142462Z [inf]  Query executed: {
+2026-06-12T22:04:39.448146562Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T22:04:39.448150432Z [inf]    duration: '1867ms',
+2026-06-12T23:04:39.816159700Z [inf]  PostgreSQL connected
+2026-06-12T23:04:39.816162140Z [inf]  Query executed: {
+2026-06-12T23:04:39.816165940Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-12T23:04:39.816168420Z [inf]    duration: '1842ms',
+2026-06-12T23:04:39.816170890Z [inf]    rows: 0
+2026-06-12T23:04:39.816173110Z [inf]  }
+2026-06-13T00:04:40.697742303Z [inf]  PostgreSQL connected
+2026-06-13T00:04:40.697747083Z [inf]  Query executed: {
+2026-06-13T00:04:40.697750673Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T00:04:40.697754213Z [inf]    duration: '1874ms',
+2026-06-13T00:04:40.697757633Z [inf]    rows: 0
+2026-06-13T00:04:40.697761533Z [inf]  }
+2026-06-13T01:04:41.659223328Z [inf]  PostgreSQL connected
+2026-06-13T01:04:41.659227568Z [inf]  Query executed: {
+2026-06-13T01:04:41.659231338Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T01:04:41.659236478Z [inf]    duration: '1902ms',
+2026-06-13T01:04:41.659240938Z [inf]    rows: 0
+2026-06-13T01:04:41.659245168Z [inf]  }
+2026-06-13T01:56:51.687605909Z [err]  Redis error: Socket closed unexpectedly
+2026-06-13T01:56:51.687613839Z [inf]  Redis reconnecting...
+2026-06-13T01:56:51.687618469Z [inf]  Redis connected
+2026-06-13T02:04:41.700185735Z [inf]  PostgreSQL connected
+2026-06-13T02:04:41.700190585Z [inf]  Query executed: {
+2026-06-13T02:04:41.700195405Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T02:04:41.700199005Z [inf]    duration: '1874ms',
+2026-06-13T02:04:41.700206155Z [inf]    rows: 0
+2026-06-13T02:04:41.700210465Z [inf]  }
+2026-06-13T03:04:42.012960027Z [inf]  PostgreSQL connected
+2026-06-13T03:04:42.012964657Z [inf]  Query executed: {
+2026-06-13T03:04:42.012968527Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T03:04:42.012972157Z [inf]    duration: '1962ms',
+2026-06-13T03:04:42.012976267Z [inf]    rows: 0
+2026-06-13T03:04:42.012981157Z [inf]  }
+2026-06-13T04:04:43.008999108Z [inf]  PostgreSQL connected
+2026-06-13T04:04:43.009005308Z [inf]  Query executed: {
+2026-06-13T04:04:43.009009618Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T04:04:43.009014949Z [inf]    duration: '1947ms',
+2026-06-13T04:04:43.009020029Z [inf]    rows: 0
+2026-06-13T04:04:43.009024609Z [inf]  }
+2026-06-13T05:04:43.925119711Z [inf]  PostgreSQL connected
+2026-06-13T05:04:43.925125111Z [inf]  Query executed: {
+2026-06-13T05:04:43.925129041Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T05:04:43.925133191Z [inf]    duration: '1911ms',
+2026-06-13T05:04:43.925137261Z [inf]    rows: 0
+2026-06-13T05:04:43.925142261Z [inf]  }
+2026-06-13T06:04:44.129368959Z [inf]  PostgreSQL connected
+2026-06-13T06:04:44.129372879Z [inf]  Query executed: {
+2026-06-13T06:04:44.129377129Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T06:04:44.129382068Z [inf]    duration: '1821ms',
+2026-06-13T06:04:44.129386738Z [inf]    rows: 0
+2026-06-13T06:04:44.129391228Z [inf]  }
+2026-06-13T07:04:44.224018924Z [inf]  PostgreSQL connected
+2026-06-13T07:04:44.224023843Z [inf]  Query executed: {
+2026-06-13T07:04:44.224027463Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T07:04:44.224030893Z [inf]    duration: '1822ms',
+2026-06-13T07:04:44.224034283Z [inf]    rows: 0
+2026-06-13T07:04:44.224038683Z [inf]  }
+2026-06-13T07:56:44.997040739Z [err]  Redis error: Socket closed unexpectedly
+2026-06-13T07:56:44.997045259Z [inf]  Redis reconnecting...
+2026-06-13T07:56:44.997048859Z [inf]  Redis connected
+2026-06-13T08:04:34.944512228Z [inf]  PostgreSQL connected
+2026-06-13T08:04:34.944516748Z [inf]  Query executed: {
+2026-06-13T08:04:34.944520718Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T08:04:34.944524718Z [inf]    duration: '1849ms',
+2026-06-13T08:04:34.944528938Z [inf]    rows: 0
+2026-06-13T08:04:34.944533498Z [inf]  }
+2026-06-13T09:04:35.280350372Z [inf]  PostgreSQL connected
+2026-06-13T09:04:35.280355012Z [inf]  Query executed: {
+2026-06-13T09:04:35.280359202Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T09:04:35.280362992Z [inf]    duration: '1989ms',
+2026-06-13T09:04:35.280366942Z [inf]    rows: 0
+2026-06-13T09:04:35.280371532Z [inf]  }
+2026-06-13T10:04:35.480663467Z [inf]  PostgreSQL connected
+2026-06-13T10:04:35.480668697Z [inf]  Query executed: {
+2026-06-13T10:04:35.480674027Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T10:04:35.480680367Z [inf]    rows: 0
+2026-06-13T10:04:35.480683277Z [inf]    duration: '1881ms',
+2026-06-13T10:04:35.480687007Z [inf]  }
+2026-06-13T11:04:35.949155314Z [inf]  PostgreSQL connected
+2026-06-13T11:04:35.949158284Z [inf]  Query executed: {
+2026-06-13T11:04:35.949160734Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T11:04:35.949163914Z [inf]    duration: '2004ms',
+2026-06-13T11:04:35.949166773Z [inf]    rows: 0
+2026-06-13T11:04:35.949169433Z [inf]  }
+2026-06-13T12:04:36.504109349Z [inf]  PostgreSQL connected
+2026-06-13T12:04:36.504114589Z [inf]  Query executed: {
+2026-06-13T12:04:36.504119879Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T12:04:36.504124039Z [inf]    duration: '1906ms',
+2026-06-13T12:04:36.504127778Z [inf]    rows: 0
+2026-06-13T12:04:36.504131338Z [inf]  }
+2026-06-13T13:04:36.525261477Z [inf]  PostgreSQL connected
+2026-06-13T13:04:36.525265617Z [inf]  Query executed: {
+2026-06-13T13:04:36.525269227Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T13:04:36.525273047Z [inf]    duration: '1839ms',
+2026-06-13T13:04:36.525276927Z [inf]    rows: 0
+2026-06-13T13:04:36.525280997Z [inf]  }
+2026-06-13T13:56:46.605525049Z [err]  Redis error: Socket closed unexpectedly
+2026-06-13T13:56:46.605530309Z [inf]  Redis reconnecting...
+2026-06-13T13:56:46.605535029Z [inf]  Redis connected
+2026-06-13T14:04:36.694120955Z [inf]  PostgreSQL connected
+2026-06-13T14:04:36.694128884Z [inf]  Query executed: {
+2026-06-13T14:04:36.694132914Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T14:04:36.694138194Z [inf]    duration: '1866ms',
+2026-06-13T14:04:36.694143074Z [inf]    rows: 0
+2026-06-13T14:04:36.694147964Z [inf]  }
+2026-06-13T15:04:38.155433861Z [inf]  PostgreSQL connected
+2026-06-13T15:04:38.155442291Z [inf]  Query executed: {
+2026-06-13T15:04:38.155447731Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T15:04:38.155452211Z [inf]    duration: '1811ms',
+2026-06-13T15:04:38.155457141Z [inf]    rows: 0
+2026-06-13T15:04:38.155461351Z [inf]  }
+2026-06-13T16:04:38.713256219Z [inf]  PostgreSQL connected
+2026-06-13T16:04:38.713260129Z [inf]  Query executed: {
+2026-06-13T16:04:38.713264059Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T16:04:38.713268039Z [inf]    duration: '1836ms',
+2026-06-13T16:04:38.713271479Z [inf]    rows: 0
+2026-06-13T16:04:38.713274779Z [inf]  }
+2026-06-13T17:04:40.226220001Z [inf]  PostgreSQL connected
+2026-06-13T17:04:40.226231730Z [inf]  Query executed: {
+2026-06-13T17:04:40.226236120Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T17:04:40.226240070Z [inf]    duration: '1811ms',
+2026-06-13T17:04:40.226244270Z [inf]    rows: 0
+2026-06-13T17:04:40.226248420Z [inf]  }
+2026-06-13T18:04:40.822005473Z [inf]  PostgreSQL connected
+2026-06-13T18:04:40.822011183Z [inf]  Query executed: {
+2026-06-13T18:04:40.822014652Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T18:04:40.822018252Z [inf]    duration: '2021ms',
+2026-06-13T18:04:40.822021982Z [inf]    rows: 0
+2026-06-13T18:04:40.822025312Z [inf]  }
+2026-06-13T19:04:40.978122767Z [inf]  PostgreSQL connected
+2026-06-13T19:04:40.978127887Z [inf]  Query executed: {
+2026-06-13T19:04:40.978131647Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T19:04:40.978136137Z [inf]    duration: '2028ms',
+2026-06-13T19:04:40.978140117Z [inf]    rows: 0
+2026-06-13T19:04:40.978145286Z [inf]  }
+2026-06-13T19:56:51.878636361Z [err]  Redis error: Socket closed unexpectedly
+2026-06-13T19:56:51.878647700Z [inf]  Redis reconnecting...
+2026-06-13T19:56:51.878662780Z [inf]  Redis connected
+2026-06-13T20:04:41.995462415Z [inf]  PostgreSQL connected
+2026-06-13T20:04:41.995468195Z [inf]  Query executed: {
+2026-06-13T20:04:41.995472175Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T20:04:41.995475815Z [inf]    duration: '1861ms',
+2026-06-13T20:04:41.995479055Z [inf]    rows: 0
+2026-06-13T20:04:41.995482855Z [inf]  }
+2026-06-13T21:04:42.931047806Z [inf]  PostgreSQL connected
+2026-06-13T21:04:42.931053946Z [inf]  Query executed: {
+2026-06-13T21:04:42.931058365Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T21:04:42.931062235Z [inf]    duration: '1829ms',
+2026-06-13T21:04:42.931066075Z [inf]    rows: 0
+2026-06-13T21:04:42.931069995Z [inf]  }
+2026-06-13T22:04:42.964626502Z [inf]  PostgreSQL connected
+2026-06-13T22:04:42.964633552Z [inf]  Query executed: {
+2026-06-13T22:04:42.964638802Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T22:04:42.964643372Z [inf]    duration: '1864ms',
+2026-06-13T22:04:42.964648432Z [inf]    rows: 0
+2026-06-13T22:04:42.964652482Z [inf]  }
+2026-06-13T23:04:43.448257031Z [inf]  PostgreSQL connected
+2026-06-13T23:04:43.448261971Z [inf]  Query executed: {
+2026-06-13T23:04:43.448265851Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-13T23:04:43.448269620Z [inf]    duration: '1867ms',
+2026-06-13T23:04:43.448273620Z [inf]    rows: 0
+2026-06-13T23:04:43.448277540Z [inf]  }
+2026-06-14T00:04:44.444793568Z [inf]  PostgreSQL connected
+2026-06-14T00:04:44.444800498Z [inf]  Query executed: {
+2026-06-14T00:04:44.444805288Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T00:04:44.444809948Z [inf]    duration: '1805ms',
+2026-06-14T00:04:44.444815597Z [inf]    rows: 0
+2026-06-14T00:04:44.444821207Z [inf]  }
+2026-06-14T01:04:44.470460260Z [inf]  PostgreSQL connected
+2026-06-14T01:04:44.470463900Z [inf]  Query executed: {
+2026-06-14T01:04:44.470467480Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T01:04:44.470470990Z [inf]    duration: '1828ms',
+2026-06-14T01:04:44.470474770Z [inf]    rows: 0
+2026-06-14T01:04:44.470478540Z [inf]  }
+2026-06-14T01:56:54.551803909Z [err]  Redis error: Socket closed unexpectedly
+2026-06-14T01:56:54.551808879Z [inf]  Redis reconnecting...
+2026-06-14T01:56:54.551812839Z [inf]  Redis connected
+2026-06-14T02:04:44.559990947Z [inf]  PostgreSQL connected
+2026-06-14T02:04:44.559996247Z [inf]  Query executed: {
+2026-06-14T02:04:44.560000257Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T02:04:44.560004347Z [inf]    duration: '1820ms',
+2026-06-14T02:04:44.560008167Z [inf]    rows: 0
+2026-06-14T02:04:44.560011927Z [inf]  }
+2026-06-14T03:04:34.818054058Z [inf]  PostgreSQL connected
+2026-06-14T03:04:34.884902789Z [inf]  Query executed: {
+2026-06-14T03:04:34.884906829Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T03:04:34.884910628Z [inf]    duration: '1868ms',
+2026-06-14T03:04:34.884914318Z [inf]    rows: 0
+2026-06-14T03:04:34.884917918Z [inf]  }
+2026-06-14T04:04:39.647605225Z [inf]  PostgreSQL connected
+2026-06-14T04:04:39.647611905Z [inf]  Query executed: {
+2026-06-14T04:04:39.647617355Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T04:04:39.647621945Z [inf]    duration: '1862ms',
+2026-06-14T04:04:39.647626185Z [inf]    rows: 0
+2026-06-14T04:04:39.647630285Z [inf]  }
+2026-06-14T05:04:40.611066061Z [inf]  PostgreSQL connected
+2026-06-14T05:04:40.611070781Z [inf]  Query executed: {
+2026-06-14T05:04:40.611074171Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T05:04:40.611076581Z [inf]    duration: '1920ms',
+2026-06-14T05:04:40.611078901Z [inf]    rows: 0
+2026-06-14T05:04:40.611081391Z [inf]  }
+2026-06-14T06:04:41.598391696Z [inf]  PostgreSQL connected
+2026-06-14T06:04:41.598396746Z [inf]  Query executed: {
+2026-06-14T06:04:41.598399366Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T06:04:41.598401696Z [inf]    duration: '1852ms',
+2026-06-14T06:04:41.598404326Z [inf]    rows: 0
+2026-06-14T06:04:41.598406946Z [inf]  }
+2026-06-14T07:04:42.518795423Z [inf]  PostgreSQL connected
+2026-06-14T07:04:42.518800963Z [inf]  Query executed: {
+2026-06-14T07:04:42.518805213Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T07:04:42.518809323Z [inf]    duration: '1845ms',
+2026-06-14T07:04:42.518812803Z [inf]    rows: 0
+2026-06-14T07:04:42.518816873Z [inf]  }
+2026-06-14T07:56:52.520818848Z [err]  Redis error: Socket closed unexpectedly
+2026-06-14T07:56:52.520824437Z [inf]  Redis reconnecting...
+2026-06-14T07:56:52.520828997Z [inf]  Redis connected
+2026-06-14T08:04:42.547429665Z [inf]  PostgreSQL connected
+2026-06-14T08:04:42.547434535Z [inf]  Query executed: {
+2026-06-14T08:04:42.547438315Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T08:04:42.547442645Z [inf]    duration: '1835ms',
+2026-06-14T08:04:42.547446515Z [inf]    rows: 0
+2026-06-14T08:04:42.547450255Z [inf]  }
+2026-06-14T09:04:43.558573709Z [inf]  PostgreSQL connected
+2026-06-14T09:04:43.558578109Z [inf]  Query executed: {
+2026-06-14T09:04:43.558583319Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T09:04:43.558587109Z [inf]    duration: '1917ms',
+2026-06-14T09:04:43.558590889Z [inf]    rows: 0
+2026-06-14T09:04:43.558594559Z [inf]  }
+2026-06-14T10:04:34.639614033Z [inf]  PostgreSQL connected
+2026-06-14T10:04:34.639619163Z [inf]  Query executed: {
+2026-06-14T10:04:34.639623643Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T10:04:34.639627373Z [inf]    duration: '1275ms',
+2026-06-14T10:04:34.639631583Z [inf]    rows: 0
+2026-06-14T10:04:34.639635983Z [inf]  }
+2026-06-14T10:15:34.668248165Z [err]  ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+2026-06-14T10:15:34.668279595Z [err]      at Object.xForwardedForHeader (/app/node_modules/express-rate-limit/dist/index.cjs:185:13)
+2026-06-14T10:15:34.668284695Z [err]      at wrappedValidations.<computed> [as xForwardedForHeader] (/app/node_modules/express-rate-limit/dist/index.cjs:397:22)
+2026-06-14T10:15:34.668288665Z [err]      at Object.keyGenerator (/app/node_modules/express-rate-limit/dist/index.cjs:658:20)
+2026-06-14T10:15:34.668291895Z [err]      at /app/node_modules/express-rate-limit/dist/index.cjs:710:32
+2026-06-14T10:15:34.668295475Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2026-06-14T10:15:34.668298684Z [err]      at async /app/node_modules/express-rate-limit/dist/index.cjs:691:5 {
+2026-06-14T10:15:34.668302004Z [err]    code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+2026-06-14T10:15:34.668308464Z [err]    help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+2026-06-14T10:15:34.668312134Z [err]  }
+2026-06-14T10:15:34.668315694Z [err]  ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+2026-06-14T10:15:34.668320164Z [err]      at Object.xForwardedForHeader (/app/node_modules/express-rate-limit/dist/index.cjs:185:13)
+2026-06-14T10:15:34.668323944Z [err]      at wrappedValidations.<computed> [as xForwardedForHeader] (/app/node_modules/express-rate-limit/dist/index.cjs:397:22)
+2026-06-14T10:15:34.668962187Z [err]      at Object.keyGenerator (/app/node_modules/express-rate-limit/dist/index.cjs:658:20)
+2026-06-14T10:15:34.668968477Z [err]      at /app/node_modules/express-rate-limit/dist/index.cjs:710:32
+2026-06-14T10:15:34.668973347Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2026-06-14T10:15:34.668977647Z [err]      at async /app/node_modules/express-rate-limit/dist/index.cjs:691:5 {
+2026-06-14T10:15:34.668981947Z [err]    code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+2026-06-14T10:15:34.668985467Z [err]    help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+2026-06-14T10:15:34.668989507Z [err]  }
+2026-06-14T10:15:34.668993007Z [err]  Error: AppError: name is not allowed to be empty
+2026-06-14T10:15:34.668996717Z [err]      at /app/src/validators/schemas.js:12:25
+2026-06-14T10:15:34.669001017Z [err]      at newFn (/app/node_modules/express-async-errors/index.js:16:20)
+2026-06-14T10:15:34.669004877Z [err]      at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2026-06-14T10:15:34.669008807Z [err]      at next (/app/node_modules/express/lib/router/route.js:149:13)
+2026-06-14T10:15:34.669012337Z [err]      at verifyFirebase (/app/src/middleware/auth.js:65:9)
+2026-06-14T10:15:34.669016446Z [err]      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+2026-06-14T10:15:34.669020366Z [err]    statusCode: 400,
+2026-06-14T10:15:34.669024476Z [err]    isOperational: true
+2026-06-14T10:15:34.669028706Z [err]  }
+2026-06-14T10:15:34.669032446Z [inf]  [0mPOST /api/auth/firebase-login [33m400[0m 96.223 ms - 576[0m
+2026-06-14T10:41:14.714197276Z [err]    statusCode: 404,
+2026-06-14T10:41:14.714201976Z [err]    isOperational: true
+2026-06-14T10:41:14.714207375Z [err]  }
+2026-06-14T10:41:14.714213385Z [inf]  [0mGET /favicon.ico [33m404[0m 0.895 ms - 925[0m
+2026-06-14T10:41:14.714217215Z [err]  Error: AppError: Route GET /favicon.ico not found
+2026-06-14T10:41:14.714224395Z [err]      at notFound (/app/src/middleware/errorHandler.js:71:10)
+2026-06-14T10:41:14.714229545Z [err]      at newFn (/app/node_modules/express-async-errors/index.js:16:20)
+2026-06-14T10:41:14.714232905Z [err]      at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2026-06-14T10:41:14.714235905Z [err]      at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
+2026-06-14T10:41:14.714238945Z [err]      at /app/node_modules/express/lib/router/index.js:286:9
+2026-06-14T10:41:14.714242575Z [err]      at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
+2026-06-14T10:41:14.714246205Z [err]      at next (/app/node_modules/express/lib/router/index.js:280:10)
+2026-06-14T10:41:14.714249525Z [err]      at urlencodedParser (/app/node_modules/body-parser/lib/types/urlencoded.js:91:7)
+2026-06-14T10:41:14.714253065Z [err]      at newFn (/app/node_modules/express-async-errors/index.js:16:20)
+2026-06-14T10:41:14.714256455Z [err]      at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5) {
+2026-06-14T11:04:34.983128744Z [inf]  PostgreSQL connected
+2026-06-14T11:04:35.037225453Z [inf]  Query executed: {
+2026-06-14T11:04:35.037228193Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T11:04:35.037230893Z [inf]    duration: '1895ms',
+2026-06-14T11:04:35.037233643Z [inf]    rows: 0
+2026-06-14T11:04:35.037236503Z [inf]  }
+2026-06-14T12:04:35.245051294Z [inf]  PostgreSQL connected
+2026-06-14T12:04:35.245057824Z [inf]  Query executed: {
+2026-06-14T12:04:35.245063033Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T12:04:35.245066903Z [inf]    duration: '1865ms',
+2026-06-14T12:04:35.245070543Z [inf]    rows: 0
+2026-06-14T12:04:35.245073873Z [inf]  }
+2026-06-14T13:04:36.296979626Z [inf]  PostgreSQL connected
+2026-06-14T13:04:36.296988996Z [inf]  Query executed: {
+2026-06-14T13:04:36.296995476Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T13:04:36.297000326Z [inf]    duration: '1950ms',
+2026-06-14T13:04:36.297004825Z [inf]    rows: 0
+2026-06-14T13:04:36.297009385Z [inf]  }
+2026-06-14T13:56:47.115234827Z [err]  Redis error: Socket closed unexpectedly
+2026-06-14T13:56:47.115247427Z [inf]  Redis reconnecting...
+2026-06-14T13:56:47.115253737Z [inf]  Redis connected
+2026-06-14T14:04:37.260815294Z [inf]  PostgreSQL connected
+2026-06-14T14:04:37.260825204Z [inf]  Query executed: {
+2026-06-14T14:04:37.260832354Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T14:04:37.260839464Z [inf]    duration: '1859ms',
+2026-06-14T14:04:37.260845214Z [inf]    rows: 0
+2026-06-14T14:04:37.260851194Z [inf]  }
+2026-06-14T15:04:38.239849553Z [inf]  PostgreSQL connected
+2026-06-14T15:04:38.239855923Z [inf]  Query executed: {
+2026-06-14T15:04:38.239860523Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T15:04:38.239864513Z [inf]    duration: '1990ms',
+2026-06-14T15:04:38.239869063Z [inf]    rows: 0
+2026-06-14T15:04:38.239872933Z [inf]  }
+2026-06-14T16:04:38.260834592Z [inf]  PostgreSQL connected
+2026-06-14T16:04:38.260838892Z [inf]  Query executed: {
+2026-06-14T16:04:38.260842372Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T16:04:38.260847412Z [inf]    duration: '1933ms',
+2026-06-14T16:04:38.260851592Z [inf]    rows: 0
+2026-06-14T16:04:38.260855261Z [inf]  }
+2026-06-14T17:04:39.526752366Z [inf]  PostgreSQL connected
+2026-06-14T17:04:39.526758016Z [inf]  Query executed: {
+2026-06-14T17:04:39.526762426Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T17:04:39.526766486Z [inf]    duration: '1967ms',
+2026-06-14T17:04:39.526771266Z [inf]    rows: 0
+2026-06-14T17:04:39.526775225Z [inf]  }
+2026-06-14T18:04:40.481249849Z [inf]  PostgreSQL connected
+2026-06-14T18:04:40.481257108Z [inf]  Query executed: {
+2026-06-14T18:04:40.481261908Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T18:04:40.481265798Z [inf]    duration: '1953ms',
+2026-06-14T18:04:40.481270518Z [inf]    rows: 0
+2026-06-14T18:04:40.481275358Z [inf]  }
+2026-06-14T19:04:41.445876317Z [inf]    rows: 0
+2026-06-14T19:04:41.445879417Z [inf]  PostgreSQL connected
+2026-06-14T19:04:41.445885377Z [inf]  }
+2026-06-14T19:04:41.445887397Z [inf]  Query executed: {
+2026-06-14T19:04:41.445892807Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T19:04:41.445897377Z [inf]    duration: '1936ms',
+2026-06-14T19:56:52.476654223Z [err]  Redis error: Socket closed unexpectedly
+2026-06-14T19:56:52.476659043Z [inf]  Redis reconnecting...
+2026-06-14T19:56:52.476662843Z [inf]  Redis connected
+2026-06-14T20:04:42.484789590Z [inf]  PostgreSQL connected
+2026-06-14T20:04:42.484794290Z [inf]  Query executed: {
+2026-06-14T20:04:42.484798040Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T20:04:42.484801770Z [inf]    duration: '1927ms',
+2026-06-14T20:04:42.484805110Z [inf]    rows: 0
+2026-06-14T20:04:42.484809210Z [inf]  }
+2026-06-14T21:04:43.358590525Z [inf]  PostgreSQL connected
+2026-06-14T21:04:43.358595905Z [inf]  Query executed: {
+2026-06-14T21:04:43.358601395Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T21:04:43.358606685Z [inf]    duration: '1843ms',
+2026-06-14T21:04:43.358612675Z [inf]    rows: 0
+2026-06-14T21:04:43.358618245Z [inf]  }
+2026-06-14T22:04:43.734797384Z [inf]  PostgreSQL connected
+2026-06-14T22:04:43.734801314Z [inf]  Query executed: {
+2026-06-14T22:04:43.734804554Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T22:04:43.734807764Z [inf]    duration: '1843ms',
+2026-06-14T22:04:43.734811434Z [inf]    rows: 0
+2026-06-14T22:04:43.734814734Z [inf]  }
+2026-06-14T23:04:44.757190524Z [inf]  PostgreSQL connected
+2026-06-14T23:04:44.757202564Z [inf]  Query executed: {
+2026-06-14T23:04:44.757208483Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-14T23:04:44.757213073Z [inf]    duration: '1884ms',
+2026-06-14T23:04:44.757217573Z [inf]    rows: 0
+2026-06-14T23:04:44.757222673Z [inf]  }
+2026-06-15T00:04:35.417914780Z [inf]  PostgreSQL connected
+2026-06-15T00:04:35.417921720Z [inf]  Query executed: {
+2026-06-15T00:04:35.417926110Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T00:04:35.417930040Z [inf]    duration: '1901ms',
+2026-06-15T00:04:35.417933560Z [inf]    rows: 0
+2026-06-15T00:04:35.417937370Z [inf]  }
+2026-06-15T01:04:36.447749711Z [inf]  PostgreSQL connected
+2026-06-15T01:04:36.447754691Z [inf]  Query executed: {
+2026-06-15T01:04:36.447758411Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T01:04:36.447761811Z [inf]    duration: '1872ms',
+2026-06-15T01:04:36.447765431Z [inf]    rows: 0
+2026-06-15T01:04:36.447821170Z [inf]  }
+2026-06-15T01:56:56.462161355Z [err]  Redis error: Socket closed unexpectedly
+2026-06-15T01:56:56.462167085Z [inf]  Redis reconnecting...
+2026-06-15T01:56:56.462172305Z [inf]  Redis connected
+2026-06-15T02:04:36.559601110Z [inf]  PostgreSQL connected
+2026-06-15T02:04:36.559610630Z [inf]  Query executed: {
+2026-06-15T02:04:36.559616690Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T02:04:36.559622510Z [inf]    duration: '1859ms',
+2026-06-15T02:04:36.559628340Z [inf]    rows: 0
+2026-06-15T02:04:36.559634230Z [inf]  }
+2026-06-15T03:04:37.267647512Z [inf]  PostgreSQL connected
+2026-06-15T03:04:37.267652322Z [inf]  Query executed: {
+2026-06-15T03:04:37.267656442Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T03:04:37.267660742Z [inf]    duration: '1901ms',
+2026-06-15T03:04:37.267666352Z [inf]    rows: 0
+2026-06-15T03:04:37.267670971Z [inf]  }
+2026-06-15T04:04:37.662298084Z [err]  Token cleanup error: Connection terminated due to connection timeout
+2026-06-15T05:04:38.646982989Z [inf]  PostgreSQL connected
+2026-06-15T05:04:38.646986639Z [inf]  Query executed: {
+2026-06-15T05:04:38.646989899Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T05:04:38.646993119Z [inf]    duration: '1853ms',
+2026-06-15T05:04:38.646996309Z [inf]    rows: 0
+2026-06-15T05:04:38.646999519Z [inf]  }
+2026-06-15T06:04:39.329521692Z [inf]  PostgreSQL connected
+2026-06-15T06:04:39.329527022Z [inf]  Query executed: {
+2026-06-15T06:04:39.329530892Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T06:04:39.329535452Z [inf]    duration: '1852ms',
+2026-06-15T06:04:39.329539262Z [inf]    rows: 0
+2026-06-15T06:04:39.329542782Z [inf]  }
+2026-06-15T07:04:40.300696306Z [inf]  PostgreSQL connected
+2026-06-15T07:04:40.300701366Z [inf]  Query executed: {
+2026-06-15T07:04:40.300705335Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T07:04:40.300708955Z [inf]    duration: '1812ms',
+2026-06-15T07:04:40.300712565Z [inf]    rows: 0
+2026-06-15T07:04:40.300716365Z [inf]  }
+2026-06-15T07:56:50.690090476Z [err]  Redis error: Socket closed unexpectedly
+2026-06-15T07:56:50.690097816Z [inf]  Redis reconnecting...
+2026-06-15T07:56:50.690102706Z [inf]  Redis connected
+2026-06-15T08:04:40.638980827Z [inf]  PostgreSQL connected
+2026-06-15T08:04:40.638987527Z [inf]  Query executed: {
+2026-06-15T08:04:40.638992366Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T08:04:40.638997386Z [inf]    duration: '2009ms',
+2026-06-15T08:04:40.639002566Z [inf]    rows: 0
+2026-06-15T08:04:40.639007536Z [inf]  }
+2026-06-15T09:04:41.108420525Z [inf]  PostgreSQL connected
+2026-06-15T09:04:41.108425425Z [inf]  Query executed: {
+2026-06-15T09:04:41.108428945Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T09:04:41.108432805Z [inf]    duration: '1964ms',
+2026-06-15T09:04:41.108436565Z [inf]    rows: 0
+2026-06-15T09:04:41.108440865Z [inf]  }
+2026-06-15T10:04:41.328257189Z [inf]  PostgreSQL connected
+2026-06-15T10:04:41.328264119Z [inf]  Query executed: {
+2026-06-15T10:04:41.328268789Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T10:04:41.328273109Z [inf]    duration: '1959ms',
+2026-06-15T10:04:41.328276588Z [inf]    rows: 0
+2026-06-15T10:04:41.328279938Z [inf]  }
+2026-06-15T11:04:41.433138941Z [inf]  PostgreSQL connected
+2026-06-15T11:04:41.433145821Z [inf]  Query executed: {
+2026-06-15T11:04:41.433150391Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T11:04:41.433154641Z [inf]    duration: '1866ms',
+2026-06-15T11:04:41.433159091Z [inf]    rows: 0
+2026-06-15T11:04:41.433163651Z [inf]  }
+2026-06-15T12:04:42.594458531Z [inf]  PostgreSQL connected
+2026-06-15T12:04:42.594466871Z [inf]  Query executed: {
+2026-06-15T12:04:42.594470891Z [inf]    text: 'DELETE FROM refresh_tokens WHERE expires_at < NOW()',
+2026-06-15T12:04:42.594475621Z [inf]    duration: '1983ms',
+2026-06-15T12:04:42.594479611Z [inf]    rows: 0
+2026-06-15T12:04:42.594483361Z [inf]  }
