@@ -18,7 +18,7 @@ const validate = (schema, source = 'body') => {
 
 const loginSchema = Joi.object({
     fcmToken: Joi.string().optional(),
-    name: Joi.string().min(2).max(100).optional(),
+    name: Joi.string().min(2).max(100).optional().allow('', null),
 });
 
 const joinSocietySchema = Joi.object({

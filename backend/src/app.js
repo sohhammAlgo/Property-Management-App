@@ -1,7 +1,6 @@
 require('express-async-errors');
 require('dotenv').config();
 const express = require('express');
-app.set('trust proxy', 1);
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -20,6 +19,9 @@ const adminRoutes = require('./routes/admin');
 const { announcementRouter, notificationRouter } = require('./routes/misc');
 
 const app = express();
+
+// ── Trust Railway reverse proxy (fixes ERR_ERL_UNEXPECTED_X_FORWARDED_FOR) ──
+app.set('trust proxy', 1);
 
 app.get('/', (req, res) => {
     res.json({
@@ -74,6 +76,9 @@ app.use('/api/ai', aiRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/announcements', announcementRouter);
 app.use('/api/notifications', notificationRouter);
+
+// ── Silence favicon 404 log noise ──
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 // ── Error Handling ──
 app.use(notFound);

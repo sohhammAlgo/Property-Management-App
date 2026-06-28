@@ -8,6 +8,8 @@ const connectRedis = async () => {
     redisClient = createClient({
         url: process.env.REDIS_URL || 'redis://localhost:6379',
         socket: {
+            keepAlive: 30000,
+
             reconnectStrategy: (retries) => {
                 if (retries > 10) {
                     console.error('❌ Redis: Too many reconnect attempts. Giving up.');

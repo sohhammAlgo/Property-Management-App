@@ -204,6 +204,8 @@ const migrations = [
     `CREATE INDEX IF NOT EXISTS idx_notifications_user_id ON notifications(user_id);`,
     `CREATE INDEX IF NOT EXISTS idx_notifications_is_read ON notifications(is_read);`,
     `CREATE INDEX IF NOT EXISTS idx_refresh_tokens_user_id ON refresh_tokens(user_id);`,
+    `CREATE INDEX IF NOT EXISTS idx_refresh_tokens_expires_at ON refresh_tokens(expires_at);`,
+
 
     // Updated_at trigger function
     `CREATE OR REPLACE FUNCTION update_updated_at_column()

@@ -37,15 +37,25 @@ const startServer = async () => {
 
     initializeSocket(io);
 
-    // Periodic cleanup of expired refresh tokens (every hour)
+    // Periodic cleanup of expired refresh tokens (every hour) with retry
     setInterval(async () => {
-      try {
-        const deleted = await cleanExpiredTokens();
-        if (deleted > 0) console.log(`🧹 Cleaned ${deleted} expired refresh tokens`);
-      } catch (err) {
-        console.error('Token cleanup error:', err.message);
+      const MAX_RETRIES = 2;
+      for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+          const deleted = await cleanExpiredTokens();
+          if (deleted > 0) console.log(`🧹 Cleaned ${deleted} expired refresh tokens`);
+          break; // success — exit retry loop
+        } catch (err) {
+          if (attempt === MAX_RETRIES) {
+            console.error(`Token cleanup failed after ${MAX_RETRIES} attempts:`, err.message);
+          } else {
+            console.warn(`Token cleanup attempt ${attempt} failed, retrying in 5s…`);
+            await new Promise((resolve) => setTimeout(resolve, 5000));
+          }
+        }
       }
     }, 60 * 60 * 1000);
+
 
     // Start listening
     server.listen(PORT, () => {

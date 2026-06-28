@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -9,6 +9,7 @@ const NAV_BY_ROLE = {
     { icon: 'smart_toy', label: 'Complaints', to: '/complaints' },
     { icon: 'payments', label: 'Payments', to: '/payments' },
     { icon: 'campaign', label: 'Announcements', to: '/announcements' },
+    { icon: 'auto_awesome', label: 'AI Chat', to: '/chat' },
     { icon: 'help_outline', label: 'Help Center', to: '/help' },
   ],
   society_admin: [
@@ -18,6 +19,7 @@ const NAV_BY_ROLE = {
     { icon: 'smart_toy', label: 'Complaints', to: '/complaints' },
     { icon: 'payments', label: 'Payments', to: '/payments' },
     { icon: 'campaign', label: 'Announcements', to: '/announcements' },
+    { icon: 'auto_awesome', label: 'AI Chat', to: '/chat' },
     { icon: 'group', label: 'Members', to: '/members' },
     { icon: 'help_outline', label: 'Help Center', to: '/help' },
   ],
@@ -28,6 +30,7 @@ const NAV_BY_ROLE = {
     { icon: 'smart_toy', label: 'Complaints', to: '/complaints' },
     { icon: 'payments', label: 'Payments', to: '/payments' },
     { icon: 'campaign', label: 'Announcements', to: '/announcements' },
+    { icon: 'auto_awesome', label: 'AI Chat', to: '/chat' },
     { icon: 'group', label: 'Members', to: '/members' },
     { icon: 'help_outline', label: 'Help Center', to: '/help' },
   ],
@@ -38,6 +41,54 @@ export default function Layout({ children }) {
   const navigate = useNavigate();
   const role = user?.role || 'resident';
   const navItems = NAV_BY_ROLE[role] || NAV_BY_ROLE.resident;
+
+  // ── Notification bell state ──────────────────────────────────────────────
+  const [unreadCount, setUnreadCount] = useState(0);
+  const [notifications, setNotifications] = useState([]);
+  const [notifOpen, setNotifOpen] = useState(false);
+  const notifRef = useRef(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    const fetchUnread = () => {
+      import('../services/api').then(({ getUnreadCount }) => {
+        getUnreadCount()
+          .then(({ data }) => { if (!cancelled) setUnreadCount(data.count || 0); })
+          .catch(() => {});
+      });
+    };
+    fetchUnread();
+    const interval = setInterval(fetchUnread, 30000);
+    return () => { cancelled = true; clearInterval(interval); };
+  }, []);
+
+  // Close on outside click
+  useEffect(() => {
+    const handler = (e) => {
+      if (notifRef.current && !notifRef.current.contains(e.target)) setNotifOpen(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  const openNotifications = async () => {
+    const opening = !notifOpen;
+    setNotifOpen(opening);
+    if (opening) {
+      try {
+        const { getNotifications, markNotificationsRead } = await import('../services/api');
+        const { data } = await getNotifications({ limit: 10 });
+        const list = data.data || data.notifications || [];
+        setNotifications(list);
+        const unreadIds = list.filter((n) => !n.is_read).map((n) => n.id);
+        if (unreadIds.length > 0) {
+          await markNotificationsRead(unreadIds);
+          setUnreadCount(0);
+        }
+      } catch { /* silently ignore */ }
+    }
+  };
+  // ────────────────────────────────────────────────────────────────────────
 
   const handleLogout = async () => {
     await logout();
@@ -105,9 +156,44 @@ export default function Layout({ children }) {
           </div>
 
           <div className="flex items-center gap-md">
-            <button className="text-on-surface-variant hover:text-primary transition-colors">
-              <span className="material-symbols-outlined">notifications</span>
-            </button>
+            {/* Notification bell */}
+            <div className="relative" ref={notifRef}>
+              <button
+                onClick={openNotifications}
+                className="relative text-on-surface-variant hover:text-primary transition-colors"
+                title="Notifications"
+              >
+                <span className="material-symbols-outlined">notifications</span>
+                {unreadCount > 0 && (
+                  <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center px-[3px]">
+                    {unreadCount > 99 ? '99+' : unreadCount}
+                  </span>
+                )}
+              </button>
+              {notifOpen && (
+                <div className="absolute right-0 top-full mt-sm w-80 bg-surface border border-outline-variant rounded-xl shadow-modal z-50 overflow-hidden">
+                  <div className="px-md py-sm border-b border-outline-variant flex items-center justify-between">
+                    <h3 className="text-h3 text-on-surface">Notifications</h3>
+                    <button onClick={() => setNotifOpen(false)} className="text-on-surface-variant hover:text-primary">
+                      <span className="material-symbols-outlined text-sm">close</span>
+                    </button>
+                  </div>
+                  <ul className="max-h-72 overflow-y-auto divide-y divide-outline-variant/30">
+                    {notifications.length === 0 ? (
+                      <li className="px-md py-lg text-center text-on-surface-variant text-body-sm">No notifications</li>
+                    ) : (
+                      notifications.map((n) => (
+                        <li key={n.id} className={`px-md py-sm ${!n.is_read ? 'bg-primary-container/20' : ''}`}>
+                          <p className="text-body-sm font-semibold text-on-surface">{n.title}</p>
+                          <p className="text-[11px] text-on-surface-variant mt-[2px] line-clamp-2">{n.message}</p>
+                          <p className="text-[10px] text-on-surface-variant mt-xs">{new Date(n.created_at).toLocaleDateString()}</p>
+                        </li>
+                      ))
+                    )}
+                  </ul>
+                </div>
+              )}
+            </div>
             <div className="flex items-center gap-sm pl-md border-l border-outline-variant">
               <div className="text-right hidden sm:block">
                 <p className="text-body-sm font-semibold text-primary">{user?.displayName || 'User'}</p>

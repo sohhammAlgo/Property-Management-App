@@ -26,7 +26,9 @@ export function AuthProvider({ children }) {
     setTokens(loginData.accessToken, loginData.refreshToken);
 
     const { data: meData } = await api.get('/auth/me');
-    const profile = meData.user || loginData.user;
+    const profile =
+      meData.user ||
+      loginData.user;
     setUser({
       uid: firebaseUser.uid,
       email: profile.email || firebaseUser.email,
