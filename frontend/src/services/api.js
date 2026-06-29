@@ -84,7 +84,8 @@ export async function firebaseLogin(idToken, body = {}) {
   }
   if (body.fcmToken) payload.fcmToken = body.fcmToken;
 
-  const { data } = await axios.post('/api/auth/firebase-login', payload, {
+  const baseURL = import.meta.env.VITE_API_URL || '/api';
+  const { data } = await axios.post(`${baseURL}/auth/firebase-login`, payload, {
     headers: { Authorization: `Bearer ${idToken}` },
   });
   return data; // { accessToken, refreshToken, user }

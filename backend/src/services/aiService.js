@@ -16,7 +16,7 @@ const aiClient = axios.create({
 const classifyComplaint = async (description) => {
     try {
         const response = await aiClient.post('/ai/classify-complaint', { description });
-        return response.data.data;
+        return response.data;
     } catch (err) {
         console.error('AI classification error:', err.message);
         // Return defaults if AI service is unavailable
@@ -40,7 +40,7 @@ const chatWithAssistant = async (message, conversationHistory = [], context = {}
         conversation_history: conversationHistory,
         context,
     });
-    return response.data.data;
+    return response.data;
 };
 
 /**
@@ -61,7 +61,7 @@ const generateInsights = async (data) => {
 const checkAIHealth = async () => {
     try {
         const response = await aiClient.get('/health');
-        return response.data.data;
+        return response.data;
     } catch {
         return { status: 'unavailable' };
     }

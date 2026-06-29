@@ -6,15 +6,14 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://triumphant-charisma-production-5363.up.railway.app',
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
       '/ai': {
-        target: 'http://localhost:8000',
+        target: 'https://property-management-app-production-3e06.up.railway.app',
         changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/ai/, ''),
+        secure: true,
       },
     },
   },

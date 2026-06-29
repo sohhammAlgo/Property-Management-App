@@ -74,6 +74,8 @@ const getAvailableSlots = async (req, res) => {
 };
 
 const generateTimeSlots = (date, from, until, durationMins, capacity, existingBookings) => {
+    console.log("Existing bookings", existingBookings.rows);
+
     const slots = [];
     const [fromH, fromM] = from.split(':').map(Number);
     const [untilH, untilM] = until.split(':').map(Number);
