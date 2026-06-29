@@ -34,7 +34,8 @@ app.get('/', (req, res) => {
 app.use(helmet());
 const allowedOrigins = [
     process.env.FRONTEND_URL,
-    'http://localhost:5173https://property-management-app-git-main-sohams-projects-e1275eb0.vercel.app',
+    'http://localhost:5173',
+    'https://property-management-app-git-main-sohams-projects-e1275eb0.vercel.app',
     'https://property-management-2beb7p1x6-sohams-projects-e1275eb0.vercel.app',
 ].filter(Boolean);
 
