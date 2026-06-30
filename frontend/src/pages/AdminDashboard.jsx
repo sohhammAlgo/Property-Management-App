@@ -23,32 +23,54 @@ export default function AdminDashboard() {
   const [aiDrawerOpen, setAiDrawerOpen] = useState(false);
   const [error, setError] = useState(null);
 
+  const [analyticsError, setAnalyticsError] = useState(null);
+  const [paymentError, setPaymentError] = useState(null);
+  const [aiError, setAiError] = useState(null);
+
   useEffect(() => {
     const load = async () => {
       setLoading(true);
       setError(null);
-      try {
-        const requests = [
-          api.get('/complaints', { params: { limit: 10 } }),
-          api.get('/complaints/analytics'),
-          api.get('/payments/stats'),
-        ];
-        const [cRes, aRes, pRes] = await Promise.all(requests);
-        setComplaints(cRes.data.data || []);
-        setAnalytics(aRes.data.analytics);
-        setPaymentStats(pRes.data.stats);
+      setAnalyticsError(null);
+      setPaymentError(null);
 
-        try {
-          const iRes = await api.post('/ai/insights');
-          setInsights(iRes.data.insights);
-        } catch {
-          // AI insights optional
-        }
+      // Fetch complaints list (required — if this fails, show the global error)
+      try {
+        const cRes = await api.get('/complaints', { params: { limit: 10 } });
+        setComplaints(cRes.data.data || []);
       } catch (err) {
-        setError(err.response?.data?.message || 'Failed to load dashboard data');
-      } finally {
-        setLoading(false);
+        setError(err.response?.data?.message || 'Failed to load complaints');
       }
+
+      // Fetch complaint analytics independently
+      try {
+        const aRes = await api.get('/complaints/analytics');
+        console.log('[AdminDashboard] analytics response:', aRes.data);
+        setAnalytics(aRes.data.analytics || null);
+      } catch (err) {
+        console.warn('[AdminDashboard] complaint analytics failed:', err.response?.data || err.message);
+        setAnalyticsError(err.response?.data?.message || 'Failed to load analytics');
+      }
+
+      // Fetch payment stats independently
+      try {
+        const pRes = await api.get('/payments/stats');
+        console.log('[AdminDashboard] payment stats response:', pRes.data);
+        setPaymentStats(pRes.data.stats || null);
+      } catch (err) {
+        console.warn('[AdminDashboard] payment stats failed:', err.response?.data || err.message);
+        setPaymentError(err.response?.data?.message || 'Failed to load payment stats');
+      }
+
+      // AI insights — optional, failure is silent
+      try {
+        const iRes = await api.post('/ai/insights');
+        setInsights(iRes.data.insights);
+      } catch {
+        // AI insights optional
+      }
+
+      setLoading(false);
     };
     load();
   }, []);
@@ -103,7 +125,9 @@ export default function AdminDashboard() {
                   <p className="text-body-sm text-on-surface-variant">Monthly volume (last 6 months)</p>
                 </div>
               </div>
-              {monthlyTrend.length === 0 ? (
+              {analyticsError ? (
+                <p className="text-on-error text-body-sm bg-error-container px-sm py-xs rounded">{analyticsError}</p>
+              ) : monthlyTrend.length === 0 ? (
                 <p className="text-on-surface-variant text-body-sm">No complaint data yet</p>
               ) : (
                 <>
@@ -131,7 +155,9 @@ export default function AdminDashboard() {
 
             <div className="col-span-12 lg:col-span-4 card p-md">
               <h4 className="text-h3 text-on-surface mb-lg">Category Breakdown</h4>
-              {categories.length === 0 ? (
+              {analyticsError ? (
+                <p className="text-on-error text-body-sm bg-error-container px-sm py-xs rounded">{analyticsError}</p>
+              ) : categories.length === 0 ? (
                 <p className="text-on-surface-variant text-body-sm">No categories yet</p>
               ) : (
                 <div className="space-y-xs">
@@ -161,7 +187,9 @@ export default function AdminDashboard() {
                   <p className="text-h3 text-secondary font-bold">₹{Number(totalCollected).toLocaleString()}</p>
                 </div>
               </div>
-              {revenueMonthly.length === 0 ? (
+              {paymentError ? (
+                <p className="text-on-error text-body-sm bg-error-container px-sm py-xs rounded">{paymentError}</p>
+              ) : revenueMonthly.length === 0 ? (
                 <p className="text-on-surface-variant text-body-sm">No payment data yet</p>
               ) : (
                 <div className="flex items-end gap-md h-28">

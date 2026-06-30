@@ -14,12 +14,20 @@ function getWeekDates(baseDate = new Date()) {
 }
 
 function formatDateISO(d) {
-  return d.toISOString().split('T')[0];
+  // Use local date parts to avoid UTC off-by-one in timezones east of UTC (e.g. IST +5:30)
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 function formatTimeLabel(iso) {
   return new Date(iso).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
+
+// Neutral SVG placeholder for amenities without an image (no external dependency)
+const PLACEHOLDER_SVG =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='80' viewBox='0 0 120 80'%3E%3Crect width='120' height='80' fill='%23e8eaf6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='24' fill='%237986cb'%3E%F0%9F%8F%A2%3C/text%3E%3C/svg%3E";
 
 export default function AmenityBooking() {
   const [amenities, setAmenities] = useState([]);
@@ -150,6 +158,12 @@ export default function AmenityBooking() {
                     selectedAmenityId === am.id ? 'border-2 border-secondary ring-4 ring-secondary/10' : 'hover:shadow-md'
                   }`}
                 >
+                  <img
+                    src={am.image_url || PLACEHOLDER_SVG}
+                    alt={am.name}
+                    className="w-full h-32 object-cover rounded-lg mb-sm bg-surface-container-low"
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLACEHOLDER_SVG; }}
+                  />
                   <h4 className="text-h3 text-primary">{am.name}</h4>
                   <p className="text-body-sm text-on-surface-variant mt-xs">{am.description || 'Shared facility'}</p>
                   <div className="flex gap-sm mt-md text-label-caps text-on-surface-variant">

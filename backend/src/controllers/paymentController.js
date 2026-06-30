@@ -213,14 +213,14 @@ const getPaymentStats = async (req, res) => {
         ),
         query(
             `SELECT
-            DATE_TRUNC('month', created_at) AS month,
+            TO_CHAR(created_at, 'YYYY-MM') AS month,
             COALESCE(SUM(amount) FILTER (WHERE status = 'completed'), 0) AS revenue,
             COUNT(*) AS transactions
         FROM payments
         WHERE tenant_id = $1
         AND created_at >= NOW() - INTERVAL '12 months'
-        GROUP BY DATE_TRUNC('month', created_at)
-        ORDER BY DATE_TRUNC('month', created_at)`,
+        GROUP BY TO_CHAR(created_at, 'YYYY-MM')
+        ORDER BY TO_CHAR(created_at, 'YYYY-MM')`,
             [tenantId]
         ),
         query(
@@ -230,6 +230,8 @@ const getPaymentStats = async (req, res) => {
             [tenantId]
         ),
     ]);
+
+    console.info(`[getPaymentStats] tenantId=${tenantId} monthly=${monthly.rows.length} byType=${byType.rows.length}`);
 
     sendSuccess(res, {
         stats: {

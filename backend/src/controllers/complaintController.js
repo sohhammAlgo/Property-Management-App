@@ -325,6 +325,8 @@ const getComplaintAnalytics = async (req, res) => {
         ),
     ]);
 
+    console.info(`[getComplaintAnalytics] tenantId=${tenantId} byCategory=${byCategory.rows.length} byPriority=${byPriority.rows.length} byStatus=${byStatus.rows.length} monthly=${monthly.rows.length}`);
+
     sendSuccess(res, {
         analytics: {
             byCategory: byCategory.rows,

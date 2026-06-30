@@ -53,12 +53,26 @@ const getAvailableSlots = async (req, res) => {
     if (amenityResult.rows.length === 0) throw new AppError('Amenity not found', 404);
     const amenity = amenityResult.rows[0];
 
+    // Check available_days — stored as integer array [1..7] where 1=Mon, 7=Sun (ISO weekday)
+    // JS Date.getDay() returns 0=Sun..6=Sat, convert to ISO weekday: Mon=1..Sun=7
+    const jsDay = new Date(date + 'T12:00:00Z').getDay(); // use noon UTC to avoid DST shifts
+    const isoWeekday = jsDay === 0 ? 7 : jsDay; // 0(Sun)→7, 1(Mon)→1 … 6(Sat)→6
+    const availableDays = amenity.available_days || [1, 2, 3, 4, 5, 6, 7];
+
+    console.info(`[getAvailableSlots] amenity=${id} date=${date} jsDay=${jsDay} isoWeekday=${isoWeekday} availableDays=${JSON.stringify(availableDays)}`);
+
+    if (!availableDays.map(Number).includes(isoWeekday)) {
+        console.info(`[getAvailableSlots] date ${date} (isoWeekday=${isoWeekday}) not in availableDays — returning []`);
+        return sendSuccess(res, { slots: [], amenity: { id: amenity.id, name: amenity.name } });
+    }
+
     // Get existing bookings for this date
-    const existingBookings = await query(
+    const existingBookingsResult = await query(
         `SELECT start_time, end_time FROM bookings
      WHERE amenity_id = $1 AND booking_date = $2 AND status IN ('approved', 'pending')`,
         [id, date]
     );
+    const existingBookings = existingBookingsResult.rows;
 
     // Generate slots
     const slots = generateTimeSlots(
@@ -67,21 +81,25 @@ const getAvailableSlots = async (req, res) => {
         amenity.available_until,
         amenity.slot_duration_minutes,
         amenity.capacity,
-        existingBookings.rows
+        existingBookings
     );
+
+    console.info(`[getAvailableSlots] date=${date} isoWeekday=${isoWeekday} availableDays=${JSON.stringify(availableDays)} slotsGenerated=${slots.length}`);
 
     sendSuccess(res, { slots, amenity: { id: amenity.id, name: amenity.name } });
 };
 
 const generateTimeSlots = (date, from, until, durationMins, capacity, existingBookings) => {
-    console.log("Existing bookings", existingBookings.rows);
+    // existingBookings is already the rows array — no .rows needed
+    console.info(`[generateTimeSlots] date=${date} from=${from} until=${until} duration=${durationMins}min capacity=${capacity} existingCount=${existingBookings.length}`);
 
     const slots = [];
-    const [fromH, fromM] = from.split(':').map(Number);
-    const [untilH, untilM] = until.split(':').map(Number);
+    // Parse HH:MM or HH:MM:SS from postgres TIME column
+    const fromTime = from.slice(0, 5); // '06:00'
+    const untilTime = until.slice(0, 5); // '22:00'
 
-    let current = new Date(`${date}T${from}:00`);
-    const end = new Date(`${date}T${until}:00`);
+    let current = new Date(`${date}T${fromTime}:00`);
+    const end = new Date(`${date}T${untilTime}:00`);
 
     while (current < end) {
         const slotEnd = new Date(current.getTime() + durationMins * 60000);
