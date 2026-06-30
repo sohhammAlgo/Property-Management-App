@@ -8,13 +8,19 @@ The platform enables housing societies, residential communities, apartment compl
 
 # 🌐 Live Deployment
 
-## Backend API
+## 🌐 Frontend
+
+```text
+https://property-management-app-git-main-sohams-projects-e1275eb0.vercel.app
+```
+
+## ⚙️ Backend API
 
 ```text
 https://triumphant-charisma-production-5363.up.railway.app
 ```
 
-## AI Service
+## 🤖 AI Service
 
 ```text
 https://property-management-app-production-3e06.up.railway.app
@@ -22,98 +28,109 @@ https://property-management-app-production-3e06.up.railway.app
 
 ---
 
+# 🔗 Project Links
+
+| Service             | URL                                                                          |
+| ------------------- | ---------------------------------------------------------------------------- |
+| 🌐 Frontend         | https://property-management-app-git-main-sohams-projects-e1275eb0.vercel.app |
+| ⚙️ Backend API      | https://triumphant-charisma-production-5363.up.railway.app                   |
+| 🤖 AI Service       | https://property-management-app-production-3e06.up.railway.app               |
+| 📦 Backend API Base | https://triumphant-charisma-production-5363.up.railway.app/api               |
+
+---
+
 # 🚀 Features
 
 ## 🔐 Authentication & Security
 
-- Firebase Authentication
-- JWT Access Tokens
-- Refresh Token Rotation
-- Role-Based Access Control (RBAC)
-- Multi-Tenant Data Isolation
-- Secure Session Management
-- Redis Rate Limiting
-- Helmet Security Middleware
-- SQL Injection Protection
+* Firebase Authentication
+* JWT Access Tokens
+* Refresh Token Rotation
+* Role-Based Access Control (RBAC)
+* Multi-Tenant Data Isolation
+* Secure Session Management
+* Redis Rate Limiting
+* Helmet Security Middleware
+* SQL Injection Protection
 
 ---
 
 ## 🏢 Society Management
 
-- Create and manage societies
-- Resident onboarding
-- Society dashboard
-- Resident directory
-- Society analytics
-- Tenant-based architecture
+* Create and manage societies
+* Resident onboarding
+* Society dashboard
+* Resident directory
+* Society analytics
+* Tenant-based architecture
 
 ---
 
 ## 📝 Complaint Management
 
-- Raise complaints with images
-- Complaint categorization
-- Complaint assignment
-- Status tracking
-- Comment system
-- Complaint analytics
+* Raise complaints with images
+* Complaint categorization
+* Complaint assignment
+* Status tracking
+* Comment system
+* Complaint analytics
 
 ### AI Features
 
-- Automatic complaint classification
-- Priority detection
-- Complaint summarization
-- AI-generated recommendations
+* Automatic complaint classification
+* Priority detection
+* Complaint summarization
+* AI-generated recommendations
 
 ---
 
 ## 🏊 Amenities & Bookings
 
-- Amenity management
-- Slot availability tracking
-- Booking requests
-- Booking approvals
-- Conflict prevention
-- Booking history
+* Amenity management
+* Slot availability tracking
+* Booking requests
+* Booking approvals
+* Conflict prevention
+* Booking history
 
 ### Supported Amenities
 
-- Club House
-- Swimming Pool
-- Gym
-- Community Hall
-- Tennis Court
-- Parking Slots
+* Club House
+* Swimming Pool
+* Gym
+* Community Hall
+* Tennis Court
+* Parking Slots
 
 ---
 
 ## 💳 Payment Management
 
-- Razorpay Integration
-- Maintenance collection
-- Online payments
-- Revenue tracking
-- Payment history
-- Defaulter analytics
+* Razorpay Integration
+* Maintenance collection
+* Online payments
+* Revenue tracking
+* Payment history
+* Defaulter analytics
 
 ---
 
 ## 📢 Announcements
 
-- Society announcements
-- Emergency notices
-- Event updates
-- Community communication
+* Society announcements
+* Emergency notices
+* Event updates
+* Community communication
 
 ---
 
 ## 🔔 Notifications
 
-- Real-time notifications
-- Firebase Cloud Messaging (FCM)
-- In-app notifications
-- Read/unread tracking
-- Socket.IO broadcasting
+* Real-time notifications
+* Firebase Cloud Messaging (FCM)
+* In-app notifications
+* Read/unread tracking
+* Socket.IO broadcasting
 
 ---
 
@@ -121,17 +138,17 @@ https://property-management-app-production-3e06.up.railway.app
 
 Powered by:
 
-- Gemini AI
-- Groq AI
-- FastAPI
+* Gemini AI
+* Groq AI
+* FastAPI
 
 ### AI Services
 
-- Complaint Classification
-- Society Insights
-- Resident Support Chatbot
-- Dashboard Analytics
-- Smart Recommendations
+* Complaint Classification
+* Society Insights
+* Resident Support Chatbot
+* Dashboard Analytics
+* Smart Recommendations
 
 ---
 
@@ -139,13 +156,14 @@ Powered by:
 
 ```text
                          ┌─────────────────┐
-                         │   Frontend App  │
+                         │   React Frontend│
+                         │     (Vercel)    │
                          └────────┬────────┘
                                   │
                                   ▼
                     ┌─────────────────────────┐
                     │     Express Backend     │
-                    │       Node.js API       │
+                    │      (Railway API)      │
                     └──────────┬──────────────┘
                                │
           ┌────────────────────┼────────────────────┐
@@ -157,6 +175,7 @@ Powered by:
                                ▼
                     ┌─────────────────────────┐
                     │   FastAPI AI Service    │
+                    │       (Railway)         │
                     └──────────┬──────────────┘
                                │
                                ▼
@@ -168,6 +187,17 @@ Powered by:
 ---
 
 # 🛠️ Technology Stack
+
+## Frontend
+
+```text
+React.js
+Vite
+Tailwind CSS
+Axios
+Firebase Authentication
+React Router
+```
 
 ## Backend
 
@@ -199,6 +229,7 @@ Pydantic
 Docker
 Docker Compose
 Railway
+Vercel
 GitHub
 ```
 
@@ -207,27 +238,16 @@ GitHub
 # 📂 Project Structure
 
 ```text
+frontend/
+├── src/
+├── public/
+├── package.json
+└── vite.config.js
+
 backend/
 ├── src/
 │   ├── config/
-│   │   ├── database.js
-│   │   ├── redis.js
-│   │   ├── firebase.js
-│   │   ├── cloudinary.js
-│   │   ├── socket.js
-│   │   └── migrate.js
-│   │
 │   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── tenantController.js
-│   │   ├── complaintController.js
-│   │   ├── bookingController.js
-│   │   ├── paymentController.js
-│   │   ├── announcementController.js
-│   │   ├── notificationController.js
-│   │   ├── aiController.js
-│   │   └── adminController.js
-│   │
 │   ├── middleware/
 │   ├── routes/
 │   ├── services/
@@ -235,7 +255,6 @@ backend/
 │   ├── utils/
 │   ├── app.js
 │   └── server.js
-│
 ├── Dockerfile
 ├── package.json
 └── .env
@@ -255,6 +274,20 @@ docker-compose.yml
 ---
 
 # ⚙️ Environment Variables
+
+## Frontend
+
+```env
+VITE_API_URL=https://triumphant-charisma-production-5363.up.railway.app/api
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
+
+---
 
 ## Backend
 
@@ -279,6 +312,7 @@ RAZORPAY_KEY_ID=
 RAZORPAY_KEY_SECRET=
 
 AI_SERVICE_URL=
+FRONTEND_URL=https://property-management-app-git-main-sohams-projects-e1275eb0.vercel.app
 ```
 
 ---
@@ -300,6 +334,18 @@ GROQ_API_KEY=
 git clone https://github.com/yourusername/property-management-saas.git
 
 cd property-management-saas
+```
+
+---
+
+## Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
 ```
 
 ---
@@ -352,7 +398,13 @@ docker-compose down
 
 # 🔌 API Reference
 
-## Base Backend URL
+## 🌐 Frontend
+
+```text
+https://property-management-app-git-main-sohams-projects-e1275eb0.vercel.app
+```
+
+## Backend API Base URL
 
 ```text
 https://triumphant-charisma-production-5363.up.railway.app/api
@@ -362,69 +414,69 @@ https://triumphant-charisma-production-5363.up.railway.app/api
 
 ## Authentication
 
-| Method | Endpoint |
-|----------|----------|
-| POST | /auth/firebase-login |
-| POST | /auth/refresh |
-| POST | /auth/logout |
-| GET | /auth/me |
-| PATCH | /auth/me |
+| Method | Endpoint             |
+| ------ | -------------------- |
+| POST   | /auth/firebase-login |
+| POST   | /auth/refresh        |
+| POST   | /auth/logout         |
+| GET    | /auth/me             |
+| PATCH  | /auth/me             |
 
 ---
 
 ## Society Management
 
-| Method | Endpoint |
-|----------|----------|
-| POST | /tenants |
-| GET | /tenants |
-| GET | /tenants/:id |
-| PATCH | /tenants/:id |
-| GET | /tenants/:id/stats |
+| Method | Endpoint           |
+| ------ | ------------------ |
+| POST   | /tenants           |
+| GET    | /tenants           |
+| GET    | /tenants/:id       |
+| PATCH  | /tenants/:id       |
+| GET    | /tenants/:id/stats |
 
 ---
 
 ## Complaints
 
-| Method | Endpoint |
-|----------|----------|
-| POST | /complaints |
-| GET | /complaints |
-| GET | /complaints/:id |
-| PATCH | /complaints/:id/status |
-| POST | /complaints/:id/comments |
+| Method | Endpoint                 |
+| ------ | ------------------------ |
+| POST   | /complaints              |
+| GET    | /complaints              |
+| GET    | /complaints/:id          |
+| PATCH  | /complaints/:id/status   |
+| POST   | /complaints/:id/comments |
 
 ---
 
 ## Bookings
 
-| Method | Endpoint |
-|----------|----------|
-| POST | /bookings |
-| GET | /bookings |
-| PATCH | /bookings/:id/status |
-| DELETE | /bookings/:id |
+| Method | Endpoint             |
+| ------ | -------------------- |
+| POST   | /bookings            |
+| GET    | /bookings            |
+| PATCH  | /bookings/:id/status |
+| DELETE | /bookings/:id        |
 
 ---
 
 ## Payments
 
-| Method | Endpoint |
-|----------|----------|
-| POST | /payments/create-order |
-| POST | /payments/verify |
-| GET | /payments |
-| GET | /payments/stats |
+| Method | Endpoint               |
+| ------ | ---------------------- |
+| POST   | /payments/create-order |
+| POST   | /payments/verify       |
+| GET    | /payments              |
+| GET    | /payments/stats        |
 
 ---
 
 ## AI
 
-| Method | Endpoint |
-|----------|----------|
-| POST | /ai/chat |
-| POST | /ai/insights |
-| GET | /ai/health |
+| Method | Endpoint     |
+| ------ | ------------ |
+| POST   | /ai/chat     |
+| POST   | /ai/insights |
+| GET    | /ai/health   |
 
 ---
 
@@ -436,20 +488,18 @@ https://triumphant-charisma-production-5363.up.railway.app/api
 https://property-management-app-production-3e06.up.railway.app
 ```
 
-| Method | Endpoint |
-|----------|----------|
-| GET | /health |
-| POST | /ai/classify-complaint |
-| POST | /ai/chat |
-| POST | /ai/insights |
+| Method | Endpoint               |
+| ------ | ---------------------- |
+| GET    | /health                |
+| POST   | /ai/classify-complaint |
+| POST   | /ai/chat               |
+| POST   | /ai/insights           |
 
 ---
 
 # ⚡ Real-Time Features
 
-Using Socket.IO:
-
-## Events
+Using Socket.IO
 
 ### Client → Server
 
@@ -491,29 +541,29 @@ subscriptions
 
 # 🔐 Security Features
 
-- Firebase Token Verification
-- JWT Authentication
-- Refresh Token Rotation
-- Redis-Based Rate Limiting
-- Helmet Security Headers
-- CORS Protection
-- Input Validation
-- Multi-Tenant Isolation
-- SQL Injection Prevention
-- Razorpay Signature Verification
+* Firebase Token Verification
+* JWT Authentication
+* Refresh Token Rotation
+* Redis-Based Rate Limiting
+* Helmet Security Headers
+* CORS Protection
+* Input Validation
+* Multi-Tenant Isolation
+* SQL Injection Prevention
+* Razorpay Signature Verification
 
 ---
 
 # 📈 Future Enhancements
 
-- Visitor Management
-- Smart Parking System
-- AI Voice Assistant
-- IoT Device Integration
-- Predictive Maintenance
-- Resident Mobile App
-- Smart Energy Monitoring
-- Advanced Analytics Dashboard
+* Visitor Management
+* Smart Parking System
+* AI Voice Assistant
+* IoT Device Integration
+* Predictive Maintenance
+* Resident Mobile App
+* Smart Energy Monitoring
+* Advanced Analytics Dashboard
 
 ---
 
@@ -521,9 +571,10 @@ subscriptions
 
 ## Soham Gurav
 
-Built using:
+Built using
 
 ```text
+React.js
 Node.js
 Express.js
 PostgreSQL
@@ -534,10 +585,11 @@ Gemini AI
 Groq AI
 Docker
 Railway
+Vercel
 ```
 
 ---
 
 # ⭐ Support
 
-If you found this project useful, consider giving it a star ⭐ on GitHub.
+If you found this project useful, consider giving it a ⭐ on GitHub!
